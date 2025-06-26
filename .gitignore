@@ -22,3 +22,13 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+.vscode/
+.vscode
+.idea
+
+.obsidian
+.obsidian/
+Coding-Notes/
+Maths-and-others/
+Politics/
+
