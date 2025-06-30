@@ -12,7 +12,7 @@ tags:
 
 >[!TIP] 文献结构与阅读方法
 >安大略理工大学的 Philips 教授认为，一般一篇论文的核心要素有以下几点：
->- `SPL` （ Summary for previous literature ): 作者对前人文献的总结，包括概念辨析等
+>- `SPL` （ Summary for previous literature ）: 作者对前人文献的总结，包括概念辨析等
 >- `CPL` ( Critique of previous literature ): 指出前人的研究局限
 >- `WTD` ( What the dissertation does ): 指出这篇论文的 contributions, 意图等
 >- `RAT` ( Rationale ): 研究理论框架
