@@ -11,7 +11,8 @@ import remarkMath from 'remark-math'; // 确保也安装和引入了这个
 
 // https://astro.build/config
 export default defineConfig({
-  site:'https://howard-xu-blog.vercel.app',
+  site:'https://peanutseeker.github.io',
+  base: '/blog/',
 	integrations: [expressiveCode(),mdx(), sitemap()],
 	markdown: {
     // ... 其他 remark 插件
