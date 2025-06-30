@@ -38,7 +38,7 @@ result = sum_cubes(3)
 **<mark>You can design a general function performing a specific intent regardless of the specific type of task you are currently tackling.</mark>**
 
 For example, you define this specific function for elements
-```Python
+```python
 def improve(update, close, guess=1):
     while not close(guess):
         guess = update(guess)
@@ -46,7 +46,7 @@ def improve(update, close, guess=1):
 ```
 
 You can apply this to calculating the golden ratio: 
-```Python
+```python
 
 def improve(update, close, guess=1):
     while not close(guess):
@@ -78,7 +78,7 @@ This enables you to write your code in a top-down approach, framing the workflow
 You can design functions inside functions to match the specific requirement for arguments in higher-order functions
 
 Eg: Square root calculation
-```Python
+```python
 def average(x, y):
     return (x + y)/2
 
@@ -105,7 +105,7 @@ result = sqrt(256)
 ### <mark>Returning functions</mark>
 
 You can define a compound function in Python as:
-```Python
+```python
 def compose1(f, g):
         def h(x):
             return f(g(x))
@@ -113,7 +113,7 @@ def compose1(f, g):
 ```
 **<mark>Notice that locally defined functions maintain their parent environment when they are returned. This is called a closure.</mark>**
 
-```Python
+```python
 def square(x):
     return x * x
 
@@ -143,7 +143,7 @@ Workflow:
 A loop where $x_n=x_{n-1}-f(x_{n-1})/f'(x_{n-1}) \text{ where f' is denoted as function "df"}$ Ends until $|f(x)|<error$
 Therefore apply the high-order functions of `improve` and `approx_eq`.
 We only need to define the `close` and `update` function specific for newton approximation
-```Python
+```python
 def newton_update(f, df):
         def update(x):
             return x - f(x) / df(x)
@@ -164,7 +164,7 @@ def find_zero(f, df):
 ```
 
 For square root approximation:
-```Python
+```python
 def square_root_newton(a):
         def f(x):
             return x * x - a
@@ -178,7 +178,7 @@ def square_root_newton(a):
 
 Advantage of currying: **Making tailored versions for functions that need to be applied frequently**
 For example, the following code derives the tailored function(`double`, `triple`) from the two-argument function `multiply`, which promotes code-reuse.
-```Python
+```python
 def multiply(a, b):
     return a * b
 
@@ -206,7 +206,7 @@ First call the outside function `multiply curried(2)`, where x is assigned as 2.
 Secondly, `multiply_curried(2)(10)` is the same as `inner(10)` where `x` is assigned as 2. Thus, it returns 20.
 
 Additionally, you can uncurry a function
-```Python
+```python
 def curry2(f):
         """Return a curried version of the given two-argument function."""
         def g(x):
@@ -229,7 +229,7 @@ Comprehend lambda functions as follows:
 lambda  x  :  f(g(x))
 ="A function that    takes x    and returns     f(g(x))"
 Often just consists of a single return code.
-```Python
+```python
 names = ["Alice", "Bob", "Charlie", "David"]
 
 # 正常做法：需要先定义一个完整的函数
@@ -255,7 +255,7 @@ A vivid illustration for decorators are coats(or plugins) for functions, adding 
 An easy example is adding a timer to a slow function.
 
 Original function:
-```Python
+```python
 import time
 
 def slow_operation():
@@ -266,7 +266,7 @@ def slow_operation():
     return "任务完成"
 ```
 Timer:
-```Python
+```python
 def timer_decorator(func):
     # func 就是传进来的核心人物 (slow_operation)
     def wrapper(*args, **kwargs): # "wrapper" 是穿上外套后的新人物
@@ -283,7 +283,7 @@ def timer_decorator(func):
 ```
 
 An elegant way of applying the decorator:
-```Python
+```python
 @timer_decorator
 def slow_operation_with_timer():
     """一个需要执行一段时间的核心任务"""
@@ -304,7 +304,7 @@ print(f"最终结果: {result_text}")
 
 More examples:
 **<mark>A logging decorator for debugging:</mark>**
-```Python
+```python
 import functools
 import datetime
 
@@ -354,7 +354,7 @@ print(f"\n函数 add 的名字是: {add.__name__}")
 print(f"函数 add 的文档是: {add.__doc__}")
 ```
 Caching for recursive functions:
-```Python
+```python
 import functools
 import time
 
