@@ -18,5 +18,8 @@
     "remark-custom-blocks": "^2.6.1",
     "remark-mermaidjs": "^7.0.0",
     "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.53.1"
   }
 }
