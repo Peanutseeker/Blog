@@ -156,57 +156,35 @@ hr {
 
 
 /* GFM Admonitions Styling */
-/* 这是容器的基本样式 */
 div[data-remark-github-alert] {
   padding: 1rem 1.5rem;
   margin-bottom: 1rem;
   border-left: 0.25rem solid #777;
   border-radius: 0.25rem;
-  background-color: #f0f0f0;
-  color: #333;
 }
-
-/* 这是标题行（例如 "[!TIP]"）的样式 */
 div[data-remark-github-alert] > p:first-of-type {
   margin-top: 0;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
-
-/* 这是容器内最后一段文字的样式，用于优化间距 */
 div[data-remark-github-alert] > p:last-of-type {
   margin-bottom: 0;
 }
-
-/* --- 下面是为不同类型的提示框设置专属颜色 --- */
-
-/* NOTE (蓝色) */
 div[data-remark-github-alert-title="NOTE"] {
   border-color: #007bff;
   background-color: #e6f2ff;
 }
-
-/* TIP (绿色) */
 div[data-remark-github-alert-title="TIP"] {
   border-color: #28a745;
   background-color: #eaf6ec;
 }
-
-/* IMPORTANT (紫色) */
 div[data-remark-github-alert-title="IMPORTANT"] {
   border-color: #6f42c1;
   background-color: #f1eef8;
 }
-
-/* WARNING (黄色) */
 div[data-remark-github-alert-title="WARNING"] {
   border-color: #ffc107;
   background-color: #fff8e6;
 }
-
-/* CAUTION (红色) */
 div[data-remark-github-alert-title="CAUTION"] {
   border-color: #dc3545;
   background-color: #fbebee;

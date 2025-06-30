@@ -13,3 +13,5 @@ heroImage: ../../assets/blog-placeholder-3.jpg
 
 > [WARNING]
 > 很多教程会建议直接使用官网安装包，事实上这很可能导致全局权限问题，且管理不同的 `Node.js` 版本非常麻烦
+
+[To be continued...]

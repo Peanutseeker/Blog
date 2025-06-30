@@ -4,17 +4,26 @@ description: Notes for CS61A Lecture 4
 pubDate: Jul 20 2025
 heroImage: ../../assets/blog-placeholder-3.jpg
 ---
->[!TIP] Significance
+
+>[TIP] Significance
 >A very essential insight into writing pythonic pythons
+
+
 #### Properties of Python functions
 **<mark>Insight: you can pass and return functions just like variables</mark>**
+
 You do not need to identify variable types for python codes when defining functions.
+
 Also you can return multiple variables at your will, regardless of types and numbers
+
 ## Functions as objects in python
+
 **<mark>Essentially, in python, functions are not designated machines for specific tasks. They are flexible tools that can be passed, assigned and even created</mark>**
 
 **<mark>This method matches the dynamic and abstraction feature of python programming, ensuring generalizability and robustness</mark>**
+
 #### Functions as arguments
+
 Similar to function pointers in C++, but you only need to give the name instead of restricting its type, far more convenient than cpp.
 Acts like templates in C++ but with functions, indicating generalizability
 ```python
@@ -69,7 +78,9 @@ phi = improve(golden_update,
 ```
 The general functions like `improve` are called first-class functions that frame the top workflow for your solution. They can use subordinate functions as tools and even create functions by compounding tool functions.
 
-This enables you to write your code in a top-down approach, framing the workflow first then implementing the task-specific details. Furthermore, the framework determined by first-class functions can be adapted to similar problems with different tool functions, promoting readability and code-reuse.
+This enables you to write your code in a top-down approach, framing the workflow first then implementing the task-specific details. 
+
+Furthermore, the framework determined by first-class functions can be adapted to similar problems with different tool functions, promoting readability and code-reuse.
 
 **<mark>Further, when implementing gradient descent, you pass the cost function as gradient, and write the gradient descent function as a general function</mark>**
 
@@ -134,6 +145,7 @@ result = square_successor(12)
 ```
 
 In the example above, the function f and g are defined inside the compose1 function, and should be destroyed after returning h (marked as the end for compose1's life cycle). However, in order to have the function h operate successfully, **<mark>python will package the functions f, g, and h together and return this whole package</mark>**
+
 Therefore, the function "square successor" means a package including the definition of h and the environment this construction of h depends on(whereas f refers to the function "square" and g refers to the function "successor"). In this way, the two functions can be called inside the function h.
 
 #### Application: Newton's method
@@ -141,6 +153,7 @@ Intent: figure out an approximation for one solution to `f(x)=0` in an interval 
 
 Workflow:
 A loop where $x_n=x_{n-1}-f(x_{n-1})/f'(x_{n-1}) \text{ where f' is denoted as function "df"}$ Ends until $|f(x)|<error$
+
 Therefore apply the high-order functions of `improve` and `approx_eq`.
 We only need to define the `close` and `update` function specific for newton approximation
 ```python
