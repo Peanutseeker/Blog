@@ -10,6 +10,7 @@ import remarkMermaid from 'remark-mermaidjs'; // 注意这里是 remarkMermaid
 
 // https://astro.build/config
 export default defineConfig({
+  site:'https://howard-xu-blog.vercel.app',
 	integrations: [expressiveCode(),mdx(), sitemap()],
 	markdown: {
     // ... 其他 remark 插件
