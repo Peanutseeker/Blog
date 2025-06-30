@@ -10,8 +10,6 @@ import remarkMermaid from 'remark-mermaidjs'; // 注意这里是 remarkMermaid
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://peanutseeker.github.io',
-	base:'/blog/',
 	integrations: [expressiveCode(),mdx(), sitemap()],
 	markdown: {
     // ... 其他 remark 插件
