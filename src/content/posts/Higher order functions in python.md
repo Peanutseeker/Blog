@@ -1,16 +1,19 @@
 ---
-title: 'Second post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 15 2022'
-heroImage: '../../assets/blog-placeholder-4.jpg'
+title: Higher order functions in python
+description: Notes for CS61A Lecture 4
+pubDate: Jul 20 2025
+heroImage: ../../assets/blog-placeholder-3.jpg
 ---
-
-**==Insight: you can pass and return functions just like variables==**
+>[!TIP] Significance
+>A very essential insight into writing pythonic pythons
+#### Properties of Python functions
+**<mark>Insight: you can pass and return functions just like variables</mark>**
 You do not need to identify variable types for python codes when defining functions.
-Also you can return variables at your will
-**==Essentially, in python, functions are not designated machines for specific tasks. They are flexible tools that can be passed, assigned and even created==**
+Also you can return multiple variables at your will, regardless of types and numbers
+## Functions as objects in python
+**<mark>Essentially, in python, functions are not designated machines for specific tasks. They are flexible tools that can be passed, assigned and even created</mark>**
 
-**==This method matches the dynamic and abstraction feature of python programming, ensuring generalizability and robustness==**
+**<mark>This method matches the dynamic and abstraction feature of python programming, ensuring generalizability and robustness</mark>**
 #### Functions as arguments
 Similar to function pointers in C++, but you only need to give the name instead of restricting its type, far more convenient than cpp.
 Acts like templates in C++ but with functions, indicating generalizability
@@ -32,7 +35,7 @@ result = sum_cubes(3)
 ```
 
 #### General Functions
-**==You can design a general function performing a specific intent regardless of the specific type of task you are currently tackling.==**
+**<mark>You can design a general function performing a specific intent regardless of the specific type of task you are currently tackling.</mark>**
 
 For example, you define this specific function for elements
 ```Python
@@ -68,7 +71,7 @@ The general functions like `improve` are called first-class functions that frame
 
 This enables you to write your code in a top-down approach, framing the workflow first then implementing the task-specific details. Furthermore, the framework determined by first-class functions can be adapted to similar problems with different tool functions, promoting readability and code-reuse.
 
-**==Further, when implementing gradient descent, you pass the cost function as gradient, and write the gradient descent function as a general function==**
+**<mark>Further, when implementing gradient descent, you pass the cost function as gradient, and write the gradient descent function as a general function</mark>**
 
 #### Nested functions
 
@@ -97,9 +100,9 @@ def sqrt(a):
 result = sqrt(256)
 ```
 
-**==This matches the feature of module development, enclosing every operation in specifically one function to improve comprehensibility==**
+**<mark>This matches the feature of module development, enclosing every operation in specifically one function to improve comprehensibility</mark>**
 
-### ==Returning functions==
+### <mark>Returning functions</mark>
 
 You can define a compound function in Python as:
 ```Python
@@ -108,7 +111,7 @@ def compose1(f, g):
             return f(g(x))
         return h
 ```
-**==Notice that locally defined functions maintain their parent environment when they are returned. This is called a closure.==**
+**<mark>Notice that locally defined functions maintain their parent environment when they are returned. This is called a closure.</mark>**
 
 ```Python
 def square(x):
@@ -130,7 +133,7 @@ square_successor = compose1(square, successor)
 result = square_successor(12)
 ```
 
-In the example above, the function f and g are defined inside the compose1 function, and should be destroyed after returning h (marked as the end for compose1's life cycle). However, in order to have the function h operate successfully, **==python will package the functions f, g, and h together and return this whole package==**
+In the example above, the function f and g are defined inside the compose1 function, and should be destroyed after returning h (marked as the end for compose1's life cycle). However, in order to have the function h operate successfully, **<mark>python will package the functions f, g, and h together and return this whole package</mark>**
 Therefore, the function "square successor" means a package including the definition of h and the environment this construction of h depends on(whereas f refers to the function "square" and g refers to the function "successor"). In this way, the two functions can be called inside the function h.
 
 #### Application: Newton's method
@@ -171,7 +174,7 @@ def square_root_newton(a):
 ```
 
 ### Currying and functional programming
-**==Core idea: transforming functions with multiple parameters into series of single-argument functions==**
+**<mark>Core idea: transforming functions with multiple parameters into series of single-argument functions</mark>**
 
 Advantage of currying: **Making tailored versions for functions that need to be applied frequently**
 For example, the following code derives the tailored function(`double`, `triple`) from the two-argument function `multiply`, which promotes code-reuse.
@@ -220,7 +223,7 @@ def uncurry2(g):
 ```
 
 ### Lambda Functions
-**==Essence of lambda functions: constructing functions without specific names for temporary tasks==**
+**<mark>Essence of lambda functions: constructing functions without specific names for temporary tasks</mark>**
 
 Comprehend lambda functions as follows:
 lambda  x  :  f(g(x))
@@ -245,7 +248,7 @@ names.sort(key=lambda name: name[-1])
 print(names) # 输出: ['David', 'Bob', 'Alice', 'Charlie']
 ```
 
-### ==Decorators==
+### <mark>Decorators</mark>
 
 A vivid illustration for decorators are coats(or plugins) for functions, adding extra behavior before and after they're called
 
@@ -300,7 +303,7 @@ print(f"最终结果: {result_text}")
 ```
 
 More examples:
-**==A logging decorator for debugging:==**
+**<mark>A logging decorator for debugging:</mark>**
 ```Python
 import functools
 import datetime
