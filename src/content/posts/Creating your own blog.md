@@ -2,7 +2,7 @@
 title: How to build up your own blog with Astro
 description: Instruction on astro
 pubDate: Jun 26 2025
-heroImage: ../../assets/blog-placeholder-3.jpg
+heroImage: ../../assets/images/blog-placeholder-3.jpg
 ---
 
 

@@ -3,7 +3,7 @@ title: Chain-of-thoughts
 description: Notes on chain-of-thoughts paper
 pubDate: 2025-06-30
 updatedDate: 2025-06-30
-heroImage: ../../assets/COT.png
+heroImage: ../../assets/images/COT.png
 tags:
   - "#paper-reading"
   - "#llm-reasoning"
@@ -73,7 +73,7 @@ In terms of future prospects, CoT may have the potential to solve any reasoning 
 
 <mark> This study conducts a direct comparison between standard Q-A prompting and Q-CoT-A prompting on arithmetic, commonsense and symbolic reasoning tasks. </mark>
 
-![[../../assets/images/CoT examples.png]]
+![Example of CoT](../../assets//images/CoT-examples.png)
 
 Additionally, the tests introduces model size as a key variable.
 

@@ -2,7 +2,7 @@
 title: Higher order functions in python
 description: Notes for CS61A Lecture 4
 pubDate: Jul 20 2025
-heroImage: ../../assets/blog-placeholder-3.jpg
+heroImage: ../../assets/images/blog-placeholder-3.jpg
 ---
 
 >[TIP] Significance
