@@ -3,7 +3,7 @@ title: Attention intuition
 description: Attention from 3b1b
 pubDate: 2025-07-07
 updatedDate: 2025-07-07
-heroImage: ../../assets/blog-placeholder.jpg
+heroImage: ../../assets/blog-placeholder1.jpg
 tags:
   - llms
   - attention
