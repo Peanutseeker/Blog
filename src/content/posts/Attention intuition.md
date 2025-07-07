@@ -1,10 +1,13 @@
 ---
 title: Attention intuition
-description: 
+description: Attention from 3b1b
 pubDate: 2025-07-07
 updatedDate: 2025-07-07
 heroImage: ../assets/blog-placeholder.jpg
 tags:
+  - llms
+  - attention
+  - intuition
 ---
 This blog illustrates a vivid understanding of attention mechanism in Transformers.
 
