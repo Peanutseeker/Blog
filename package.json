@@ -14,6 +14,7 @@
     "@astrojs/sitemap": "^3.4.1",
     "astro": "^5.9.4",
     "astro-expressive-code": "^0.41.2",
+    "chalk": "^5.5.0",
     "rehype-katex": "^7.0.1",
     "rehype-math": "^0.2.0",
     "remark-custom-blocks": "^2.6.1",
