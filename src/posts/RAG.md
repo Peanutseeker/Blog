@@ -1,17 +1,15 @@
 ---
-title: RAG
-description: 
+title: "RAG"
+description: "Deep dive into Retrieval-Augmented Generation mechanisms"
 pubDate: 2025-07-01
 updatedDate: 2025-07-01
-heroImage: ../../assets/images/RAG-pipeline.png
-tags:
-  - paper-reading
-  - llm-reasoning
-  - RAG
+heroImage: ../assets/images/RAG-pipeline.png
+category: "AI Research"
+tags: ["paper-reading", "llm-reasoning", "RAG"]
 ---
 
 This article delves deep into the foundational mechanisms of RAG.
-![](../../assets/images/Pasted%20image%2020250701185140.png)
+![](../assets/images/Pasted%20image%2020250701185140.png)
 
 
 >[!TIP] Analogy about RAG
@@ -37,7 +35,7 @@ However, **REALM and ORQA** utilizes **Masked LMs like BERT,** which are only ca
 
 
 ## WTD: principles of RAG
-![](../../assets/images/RAG-pipeline.png)
+![](../assets/images/RAG-pipeline.png)
 
 #### Simply explained
 [Vivid explanation of RAG by IBM](https://www.youtube.com/watch?v=qppV3n3YlF8)

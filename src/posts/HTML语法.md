@@ -1,12 +1,10 @@
 ---
-title: HTML语法
-description: 
+title: "HTML语法"
+description: "HTML syntax and fundamentals for web development"
 pubDate: 2025-07-01
 updatedDate: 2025-07-01
-heroImage: ../assets/blog-placeholder.jpg
-tags:
-  - 前端
-  - HTML
+category: "Web Development"
+tags: ["前端", "HTML", "web"]
 ---
 由于本人之后要给博客设置一些插件，因此会接触一点前端，发一些前端三件套（HTML，CSS，JavaScript）的学习笔记
 
@@ -15,7 +13,7 @@ tags:
 
 ### 简单科普HTML
 
-![how websites work](../../assets/images/Pasted%20image%2020250701161430.png)
+![how websites work](../assets/images/Pasted%20image%2020250701161430.png)
 
 HTML= HyperText Markup Language， 属于网页编程的核心内容
 

@@ -5,43 +5,44 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	/* Arcaea-inspired purple theme */
+	--accent: #8B5CF6;
+	--accent-dark: #7C3AED;
+	--accent-light: #A78BFA;
+	--secondary: #EC4899;
+	--secondary-dark: #DB2777;
+	
+	/* Neutral colors */
 	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('../assets/fonts/atkinson-regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('../assets/fonts/atkinson-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
+	--gray: 107, 114, 128;
+	--gray-light: 243, 244, 246;
+	--gray-dark: 31, 41, 55;
+	--white: 255, 255, 255;
+	
+	/* Gradients */
+	--purple-gradient: linear-gradient(135deg, #8B5CF6, #A78BFA);
+	--background-gradient: linear-gradient(135deg, #F8FAFC, #F1F5F9);
+	--hero-gradient: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(167, 139, 250, 0.05));
+	
+	/* Shadows with purple tint */
+	--box-shadow: 0 4px 6px rgba(139, 92, 246, 0.1), 0 10px 15px rgba(139, 92, 246, 0.1);
+	--box-shadow-lg: 0 10px 25px rgba(139, 92, 246, 0.15), 0 20px 40px rgba(139, 92, 246, 0.1);
+	--glow-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 body {
-	font-family: 'Atkinson', sans-serif;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background: var(--background-gradient);
+	min-height: 100vh;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.8;
+	letter-spacing: -0.01em;
 }
 main {
 	width: 720px;
@@ -85,10 +86,14 @@ a:hover {
 	color: var(--accent);
 }
 p {
-	margin-bottom: 1em;
+	margin-bottom: 1.2em;
+	font-size: 1.05em;
+	line-height: 1.75;
 }
 .prose p {
-	margin-bottom: 2em;
+	margin-bottom: 1.5em;
+	font-size: 1.05em;
+	line-height: 1.75;
 }
 textarea {
 	width: 100%;
@@ -155,12 +160,90 @@ hr {
 }
 
 
-/* GFM Admonitions Styling */
+/* GitHub-style Admonition Styling */
+.admonition {
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 0.25rem solid;
+  border-radius: 0.5rem;
+  background: var(--background-gradient);
+  box-shadow: var(--box-shadow);
+}
+
+.admonition-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admonition-title::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.admonition p:last-child {
+  margin-bottom: 0;
+}
+
+/* NOTE admonition */
+.admonition[data-type="note"] {
+  border-color: #0969da;
+  background-color: rgba(9, 105, 218, 0.05);
+}
+.admonition[data-type="note"] .admonition-title {
+  color: #0969da;
+}
+
+/* TIP admonition */
+.admonition[data-type="tip"] {
+  border-color: #1a7f37;
+  background-color: rgba(26, 127, 55, 0.05);
+}
+.admonition[data-type="tip"] .admonition-title {
+  color: #1a7f37;
+}
+
+/* IMPORTANT admonition */
+.admonition[data-type="important"] {
+  border-color: #8250df;
+  background-color: rgba(130, 80, 223, 0.05);
+}
+.admonition[data-type="important"] .admonition-title {
+  color: #8250df;
+}
+
+/* WARNING admonition */
+.admonition[data-type="warning"] {
+  border-color: #9a6700;
+  background-color: rgba(154, 103, 0, 0.05);
+}
+.admonition[data-type="warning"] .admonition-title {
+  color: #9a6700;
+}
+
+/* CAUTION admonition */
+.admonition[data-type="caution"] {
+  border-color: #cf222e;
+  background-color: rgba(207, 34, 46, 0.05);
+}
+.admonition[data-type="caution"] .admonition-title {
+  color: #cf222e;
+}
+
+/* Legacy GFM Admonitions Styling (fallback) */
 div[data-remark-github-alert] {
   padding: 1rem 1.5rem;
   margin-bottom: 1rem;
   border-left: 0.25rem solid #777;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  background: var(--background-gradient);
+  box-shadow: var(--box-shadow);
 }
 div[data-remark-github-alert] > p:first-of-type {
   margin-top: 0;
@@ -170,22 +253,32 @@ div[data-remark-github-alert] > p:last-of-type {
   margin-bottom: 0;
 }
 div[data-remark-github-alert-title="NOTE"] {
-  border-color: #007bff;
-  background-color: #e6f2ff;
+  border-color: #0969da;
+  background-color: rgba(9, 105, 218, 0.05);
 }
 div[data-remark-github-alert-title="TIP"] {
-  border-color: #28a745;
-  background-color: #eaf6ec;
+  border-color: #1a7f37;
+  background-color: rgba(26, 127, 55, 0.05);
 }
 div[data-remark-github-alert-title="IMPORTANT"] {
-  border-color: #6f42c1;
-  background-color: #f1eef8;
+  border-color: #8250df;
+  background-color: rgba(130, 80, 223, 0.05);
 }
 div[data-remark-github-alert-title="WARNING"] {
-  border-color: #ffc107;
-  background-color: #fff8e6;
+  border-color: #9a6700;
+  background-color: rgba(154, 103, 0, 0.05);
 }
 div[data-remark-github-alert-title="CAUTION"] {
-  border-color: #dc3545;
-  background-color: #fbebee;
+  border-color: #cf222e;
+  background-color: rgba(207, 34, 46, 0.05);
+}
+
+/* Highlight syntax ==text== */
+mark {
+  background: linear-gradient(135deg, rgba(255, 235, 59, 0.8), rgba(255, 193, 7, 0.6));
+  color: rgb(var(--gray-dark));
+  padding: 0.1em 0.3em;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(255, 193, 7, 0.3);
+  font-weight: 500;
 }

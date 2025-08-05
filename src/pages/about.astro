@@ -1,38 +1,381 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import ArrowButton from '../components/ArrowButton.astro';
+import { SITE_TITLE } from '../consts';
+import { Image } from 'astro:assets';
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 ---
 
-<Layout
-	title="About Me"
-	description="Self introduction"
-	pubDate={new Date('June 30 2025')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Greetings! I'm Howard Xu, a student majoring in AI at Shanghai Jiao Tong University. I have a
-		passion for exploring the realms of artificial intelligence and its applications. I'm especially 
-		interested in Reinforcement Learning (RL) and Large Language Models (LLMs). My journey in AI has been
-		inspiring, and I am excited to share my insights and experiences with you through this blog
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About - ${SITE_TITLE}`} description="Learn more about Howard Xu - AI student at Shanghai Jiao Tong University" />
+	</head>
+	<body>
+		<Navigation currentPath="/about" />
+		
+		<main class="about-page">
+			<section class="hero-section">
+				<div class="hero-content">
+					<div class="hero-image-container">
+						<Image src={AboutHeroImage} alt="About Howard Xu" class="hero-image" width={400} height={300} />
+					</div>
+					<div class="hero-text">
+						<ArrowButton text="About me" variant="primary" size="large" />
+						<h1>Howard Xu</h1>
+						<p>AI Student at Shanghai Jiao Tong University passionate about exploring artificial intelligence and its applications, especially Reinforcement Learning and Large Language Models.</p>
+					</div>
+				</div>
+			</section>
 
-	<p>
-		As a student, I am currently delving into deep learning, as well as playing with various agents.
-		I am currently participating in an EDA agent research project as part of the summerschool program.
-		I enjoy experimenting with different algorithms and frameworks to enhance my understanding of AI.
-	</p>
+			<section class="content-sections">
+				<div class="section-header">
+					<ArrowButton text="Skills" variant="primary" size="large" />
+				</div>
+				
+				<div class="section-content">
+					<details class="collapsible-section" open>
+						<summary class="section-summary">Technical Skills & Expertise</summary>
+						<div class="section-body">
+							<p>I specialize in artificial intelligence and deep learning, with expertise in:</p>
+							<ul>
+								<li><strong>Programming Languages:</strong> Python, C++</li>
+								<li><strong>Deep Learning:</strong> PyTorch framework, neural network architectures</li>
+								<li><strong>AI Specializations:</strong> Reinforcement Learning (RL), Large Language Models (LLMs)</li>
+								<li><strong>Data Structures & Algorithms:</strong> Strong foundation in C++ implementation</li>
+								<li><strong>Research Interests:</strong> EDA agents, transformer architectures</li>
+								<li><strong>Tools & Infrastructure:</strong> Learning Docker, CUDA for AI infrastructure</li>
+							</ul>
+						</div>
+					</details>
+				</div>
 
-	<p>
-		As for education, I have mastered basic data structures and algorithms in c-plus-plus. I have a good 
-		mastery of Python, and I'm currently learning the Pytorch framework. I'd also like to explore more tools like docker,
-		and about AI infra like CUDA.
-	</p>
+				<div class="section-header">
+					<ArrowButton text="Research" variant="primary" size="large" />
+				</div>
+				
+				<div class="projects-list">
+					<article class="project-item">
+						<div class="project-meta">
+							<time class="project-date">2025</time>
+						</div>
+						<div class="project-content">
+							<h3 class="project-title">EDA Agent Research Project</h3>
+							<p class="project-description">Participating in Electronic Design Automation agent research as part of the summer school program, exploring AI applications in chip design.</p>
+						</div>
+						<a href="/work/" class="project-link">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</a>
+					</article>
+				</div>
 
-	<p>
-		Thank you for visiting my blog! I hope you find the content here informative and engaging.
-		 If you have any questions or suggestions, feel free to reach out to me through the contact page.
-		I look forward to connecting with other AI enthusiasts and sharing knowledge in this exciting field.
-	</p>
+				<div class="section-header">
+					<ArrowButton text="Projects" variant="primary" size="large" />
+				</div>
+				
+				<div class="projects-list">
+					<article class="project-item">
+						<div class="project-meta">
+							<time class="project-date">Ongoing</time>
+						</div>
+						<div class="project-content">
+							<h3 class="project-title">Deep Learning Experiments</h3>
+							<p class="project-description">Experimenting with various algorithms and frameworks to enhance understanding of AI, focusing on practical implementations.</p>
+						</div>
+						<a href="/work/" class="project-link">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</a>
+					</article>
+				</div>
 
-	
-</Layout>
+				<div class="section-header">
+					<ArrowButton text="Education & Goals" variant="primary" size="large" />
+				</div>
+				
+				<div class="section-content">
+					<details class="collapsible-section">
+						<summary class="section-summary">Academic Background & Future Plans</summary>
+						<div class="section-body">
+							<p>My academic journey and aspirations:</p>
+							<ul>
+								<li><strong>Current Status:</strong> AI Major at Shanghai Jiao Tong University</li>
+								<li><strong>Foundation:</strong> Strong grasp of data structures and algorithms in C++</li>
+								<li><strong>Current Learning:</strong> Mastering PyTorch framework for deep learning</li>
+								<li><strong>Future Goals:</strong> Exploring containerization with Docker and AI infrastructure with CUDA</li>
+								<li><strong>Research Focus:</strong> Advancing knowledge in Reinforcement Learning and LLMs</li>
+								<li><strong>Community:</strong> Connecting with AI enthusiasts and sharing knowledge</li>
+							</ul>
+						</div>
+					</details>
+				</div>
+			</section>
+		</main>
+		
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.about-page {
+		padding: 0;
+		width: 100%;
+		max-width: none;
+	}
+
+	.hero-section {
+		background: var(--hero-gradient);
+		padding: 4rem 2rem;
+		border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+	}
+
+	.hero-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.hero-image-container {
+		position: relative;
+	}
+
+	.hero-image {
+		width: 100%;
+		height: auto;
+		border-radius: 16px;
+		box-shadow: var(--box-shadow-lg);
+	}
+
+	.hero-text {
+		text-align: left;
+	}
+
+	.hero-text h1 {
+		font-size: 2.5rem;
+		color: rgb(var(--gray-dark));
+		margin: 2rem 0 1rem 0;
+		background: var(--purple-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.hero-text p {
+		font-size: 1.125rem;
+		color: rgb(var(--gray));
+		line-height: 1.6;
+	}
+
+	.content-sections {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 2rem;
+	}
+
+	.section-header {
+		display: flex;
+		justify-content: center;
+		margin: 3rem 0 2rem 0;
+	}
+
+	.section-content {
+		max-width: 800px;
+		margin: 0 auto 4rem auto;
+	}
+
+	.collapsible-section {
+		background: white;
+		border-radius: 16px;
+		box-shadow: var(--box-shadow);
+		border: 1px solid rgba(139, 92, 246, 0.1);
+		overflow: hidden;
+		transition: all 0.3s ease;
+	}
+
+	.collapsible-section:hover {
+		box-shadow: var(--box-shadow-lg);
+		border-color: rgba(139, 92, 246, 0.2);
+	}
+
+	.section-summary {
+		padding: 2rem;
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: rgb(var(--gray-dark));
+		cursor: pointer;
+		list-style: none;
+		transition: background-color 0.3s ease;
+		border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+		position: relative;
+	}
+
+	.section-summary:hover {
+		background: rgba(139, 92, 246, 0.05);
+	}
+
+	.section-summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.section-summary::after {
+		content: '+';
+		position: absolute;
+		right: 2rem;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: transform 0.3s ease;
+		color: var(--accent);
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	details[open] .section-summary::after {
+		transform: translateY(-50%) rotate(45deg);
+	}
+
+	.section-body {
+		padding: 2rem;
+		color: rgb(var(--gray));
+		line-height: 1.6;
+	}
+
+	.section-body ul {
+		margin: 1rem 0;
+		padding-left: 1.5rem;
+	}
+
+	.section-body li {
+		margin-bottom: 0.75rem;
+	}
+
+	.section-body strong {
+		color: rgb(var(--gray-dark));
+	}
+
+	.projects-list {
+		max-width: 800px;
+		margin: 0 auto 4rem auto;
+	}
+
+	.project-item {
+		background: white;
+		border-radius: 16px;
+		padding: 2rem;
+		margin-bottom: 1.5rem;
+		box-shadow: var(--box-shadow);
+		border: 1px solid rgba(139, 92, 246, 0.1);
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		gap: 2rem;
+		align-items: center;
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.project-item:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--box-shadow-lg);
+		border-color: rgba(139, 92, 246, 0.2);
+	}
+
+	.project-item::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 2rem;
+		right: 2rem;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, var(--accent), transparent);
+	}
+
+	.project-meta {
+		min-width: 100px;
+	}
+
+	.project-date {
+		color: rgb(var(--gray));
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+
+	.project-content {
+		flex: 1;
+	}
+
+	.project-title {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: rgb(var(--gray-dark));
+		margin-bottom: 0.5rem;
+	}
+
+	.project-description {
+		color: rgb(var(--gray));
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	.project-link {
+		width: 40px;
+		height: 40px;
+		background: var(--purple-gradient);
+		color: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.project-link:hover {
+		transform: scale(1.1);
+		box-shadow: var(--glow-shadow);
+	}
+
+	/* Responsive design */
+	@media (max-width: 768px) {
+		.hero-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.hero-text {
+			text-align: center;
+		}
+
+		.hero-text h1 {
+			font-size: 2rem;
+		}
+
+		.content-sections {
+			padding: 3rem 1rem;
+		}
+
+		.project-item {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+			text-align: center;
+		}
+
+		.project-meta {
+			min-width: auto;
+		}
+
+		.section-summary {
+			padding: 1.5rem;
+			font-size: 1.125rem;
+		}
+
+		.section-body {
+			padding: 1.5rem;
+		}
+	}
+</style>

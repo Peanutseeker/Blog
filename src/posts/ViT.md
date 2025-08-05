@@ -1,14 +1,10 @@
 ---
-title: ViT
-description: Paper reading of Vision Transformer
+title: "ViT"
+description: "Paper reading of Vision Transformer"
 pubDate: 2025-07-22
 updatedDate: 2025-07-22
-heroImage: ../assets/blog-placeholder2.jpg
-tags:
-  - paper-reading
-  - attention
-  - Transformer
-  - CV
+category: "AI Research"
+tags: ["paper-reading", "attention", "Transformer", "CV"]
 ---
 Learning Vision Transformers—— a pure transformer CV model
 
@@ -18,7 +14,7 @@ Previously, transformer has been quite successful and widely applied on NLP task
 
 However, CNN is still dominant on CV tasks. Attempts to apply transformers into CV tasks can be divided into two categories:
 1. Enhancing CNNs with Transformers: like [Non-local NNs](https://arxiv.org/abs/1711.07971) (non-local modules that calculate "attention" between distant pixels) and Detection Transformers (CNN+ Transformers)
-![](../../assets/images/Pasted%20image%2020250723085340.png)
+![](../assets/images/Pasted%20image%2020250723085340.png)
 2. Pure Attention models: the [Stand-Alone Self-Attention Vision Models published in 2019](https://arxiv.org/abs/1906.05909) completely substitutes self-attention layers for convolutional layers. It has achieved a rivalling performance to traditional CNNs. Further, [Axial-DeepLab](https://arxiv.org/abs/1912.12180) proposes axial attention that respectively performs 1D attention on multiple axises. 
 
 ## Critique of Previous work
@@ -37,7 +33,7 @@ Further, this work explores **==image recognition at larger scales than the stan
 
 Actually, compared to NLP transformers, **==Vision transformers only modify the input sequence for pictures==**
 
-![](../../assets/images/Pasted%20image%2020250723094948.png)
+![](../assets/images/Pasted%20image%2020250723094948.png)
 
 Mathematically, one image have a resolution of $H\times W$ and $C$ channels (for RGB that's 3), and we have one image as the 3D input $x\in \mathbb{R}^{H\times W\times C}$
 

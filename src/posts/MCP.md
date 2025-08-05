@@ -1,13 +1,10 @@
 ---
-title: MCP
-description: 
+title: "MCP"
+description: "Introduction to Model Context Protocol (MCP) and AI applications"
 pubDate: 2025-07-07
 updatedDate: 2025-07-07
-heroImage: ../assets/blog-placeholder.jpg
-tags:
-  - MCP
-  - Agent
-  - llms
+category: "AI Research"
+tags: ["MCP", "Agent", "llms"]
 ---
 
 Intro to MCP by [Andrew's MCP course](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/lesson/fkbhh/introduction)

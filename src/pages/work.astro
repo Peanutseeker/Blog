@@ -1,36 +1,31 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Navigation from '../../components/Navigation.astro';
-import Footer from '../../components/Footer.astro';
-import BlogFilter from '../../components/BlogFilter.jsx';
-import { SITE_TITLE } from '../../consts';
-import { getCollection } from 'astro:content';
-
-const posts = (await getCollection('posts')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+import BaseHead from '../components/BaseHead.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import WorkTabs from '../components/WorkTabs.jsx';
+import { SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Blog - ${SITE_TITLE}`} description="Explore articles on AI, deep learning, and technology" />
+		<BaseHead title={`Work - ${SITE_TITLE}`} description="Projects and research papers by Howard Xu" />
 	</head>
 	<body>
-		<Navigation currentPath="/blog" />
+		<Navigation currentPath="/work" />
 		
-		<main class="blog-page">
+		<main class="work-page">
 			<section class="hero-section">
 				<div class="hero-content">
-					<h1 class="hero-title">Blog</h1>
+					<h1 class="hero-title">My Work</h1>
 					<p class="hero-description">
-						Explore my thoughts and insights on artificial intelligence, deep learning, and cutting-edge technology.
+						Explore my projects and research papers in artificial intelligence, deep learning, and software development.
 					</p>
 				</div>
 			</section>
 
 			<section class="content-section">
-				<BlogFilter posts={posts} client:load />
+				<WorkTabs client:load />
 			</section>
 		</main>
 		
@@ -39,7 +34,7 @@ const posts = (await getCollection('posts')).sort(
 </html>
 
 <style>
-	.blog-page {
+	.work-page {
 		padding: 0;
 		width: 100%;
 		max-width: none;
@@ -77,6 +72,8 @@ const posts = (await getCollection('posts')).sort(
 	}
 
 	.content-section {
+		max-width: 1200px;
+		margin: 0 auto;
 		padding: 4rem 2rem;
 	}
 

@@ -16,7 +16,7 @@ This is an Astro-based blog application built with TypeScript. The project uses 
 ## Architecture & Structure
 
 ### Content Management
-- Blog posts are stored in `src/content/posts/` as Markdown (.md) and MDX (.mdx) files
+- Blog posts are stored in `src/posts/` as Markdown (.md) and MDX (.mdx) files
 - Content schema is defined in `src/content.config.ts` with required frontmatter fields:
   - `title` (string): Post title
   - `description` (string): Post description  
@@ -48,7 +48,7 @@ This is an Astro-based blog application built with TypeScript. The project uses 
 
 ## Content Creation
 When creating new blog posts:
-1. Add .md or .mdx files to `src/content/posts/`
+1. Add .md or .mdx files to `src/posts/`
 2. Include required frontmatter fields (title, description, pubDate)
 3. Images should be placed in `src/assets/images/` and referenced relatively
 4. Math expressions use LaTeX syntax wrapped in $ or $$
@@ -58,7 +58,7 @@ When creating new blog posts:
 
 **NEVER modify these directories - they contain the user's personal content:**
 - `src/assets/images/` - User's image collection and blog assets
-- `src/content/` - User's blog posts and content files  
+
 - `src/private-notes/` - User's private notes and drafts
 
 Only make changes to code files (components, layouts, configuration) and never alter the user's content or images.

@@ -1,13 +1,10 @@
 ---
-title: 12 RNN
-description: 
+title: "12 RNN"
+description: "Introduction to Recurrent Neural Networks (RNN) and their applications in sequence modeling and processing sequential data"
 pubDate: 2025-07-01
 updatedDate: 2025-07-01
-heroImage: 
-tags:
-  - Umich
-  - llms
-  - RNN
+category: "Deep Learning"
+tags: ["Umich", "llms", "RNN"]
 ---
 ### Critique of CNN
 
@@ -38,5 +35,5 @@ flowchart LD
 
 
 
-![](../../assets/images/Pasted%20image%2020250702165515.png)
+![](../assets/images/Pasted%20image%2020250702165515.png)
 

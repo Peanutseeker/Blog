@@ -1,8 +1,10 @@
 ---
-title: How to build up your own blog with Astro
-description: Instruction on astro
-pubDate: Jun 26 2025
-heroImage: ../../assets/images/blog-placeholder-3.jpg
+title: "How to build up your own blog with Astro"
+description: "Instruction on astro"
+pubDate: 2025-06-26
+updatedDate: 2025-06-26
+category: "Tutorial"
+tags: ["Astro", "blog", "tutorial"]
 ---
 
 

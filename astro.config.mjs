@@ -3,24 +3,26 @@ import { defineConfig } from 'astro/config';
 import expressiveCode from 'astro-expressive-code';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
 import rehypeKatex from 'rehype-katex';
-import remarkMermaid from 'remark-mermaidjs'; // 注意这里是 remarkMermaid
-import remarkMath from 'remark-math'; // 确保也安装和引入了这个
-
-
+import remarkMermaid from 'remark-mermaidjs';
+import remarkMath from 'remark-math';
+import remarkGithubAdmonitions from 'remark-github-beta-blockquote-admonitions';
+import { remarkMark } from 'remark-mark-highlight';
 
 // https://astro.build/config
 export default defineConfig({
   site:'https://peanutseeker.github.io',
-	integrations: [expressiveCode(),mdx(), sitemap()],
+	integrations: [expressiveCode(), mdx(), sitemap(), react()],
 	markdown: {
-    // ... 其他 remark 插件
     rehypePlugins: [
-      rehypeKatex, // 在这里添加 KaTeX 插件
+      rehypeKatex,
     ],
 		remarkPlugins:[
 			remarkMermaid,
-      remarkMath
+      remarkMath,
+      remarkGithubAdmonitions,
+      remarkMark
 		]
   },
 });

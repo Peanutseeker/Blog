@@ -1,0 +1,119 @@
+---
+export interface Props {
+  text: string;
+  href?: string;
+  active?: boolean;
+  variant?: 'primary' | 'secondary' | 'accent';
+  size?: 'small' | 'medium' | 'large';
+  onClick?: string;
+}
+
+const { text, href, active = false, variant = 'primary', size = 'medium', onClick } = Astro.props;
+const isLink = !!href;
+const Tag = isLink ? 'a' : 'button';
+
+const variantClasses = {
+  primary: 'arrow-button--primary',
+  secondary: 'arrow-button--secondary', 
+  accent: 'arrow-button--accent'
+};
+
+const sizeClasses = {
+  small: 'arrow-button--small',
+  medium: 'arrow-button--medium',
+  large: 'arrow-button--large'
+};
+---
+
+<Tag 
+  class={`arrow-button ${variantClasses[variant]} ${sizeClasses[size]} ${active ? 'arrow-button--active' : ''}`}
+  href={isLink ? href : undefined}
+  onclick={onClick}
+>
+  <span class="arrow-button__text">{text}</span>
+</Tag>
+
+<style>
+  .arrow-button {
+    display: inline-block;
+    position: relative;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  }
+
+  .arrow-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+  }
+
+  .arrow-button:active {
+    transform: translateY(0);
+  }
+
+  .arrow-button--active {
+    background: linear-gradient(135deg, #6D28D9, #7C3AED);
+    box-shadow: 0 6px 20px rgba(109, 40, 217, 0.4);
+  }
+
+  .arrow-button--primary {
+    background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+  }
+
+  .arrow-button--secondary {
+    background: linear-gradient(135deg, #6B7280, #9CA3AF);
+  }
+
+  .arrow-button--accent {
+    background: linear-gradient(135deg, #EC4899, #F472B6);
+  }
+
+  .arrow-button--small {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%, 15px 50%);
+  }
+
+  .arrow-button--medium {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%);
+  }
+
+  .arrow-button--large {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 50%, calc(100% - 25px) 100%, 0 100%, 25px 50%);
+  }
+
+  .arrow-button__text {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Arcaea-inspired glow effect */
+  .arrow-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    clip-path: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .arrow-button:hover::before {
+    opacity: 1;
+  }
+</style>

@@ -1,13 +1,10 @@
 ---
-title: Transformers and LLMs
-description: Hands-on LLMs chapter 1-2
+title: "Transformers and LLMs"
+description: "Hands-on LLMs chapter 1-2"
 pubDate: 2025-07-01
 updatedDate: 2025-07-01
-heroImage: 
-tags:
-  - Transformer
-  - llms
-  - attention
+category: "Deep Learning"
+tags: ["Transformer", "llms", "attention"]
 ---
 Resource: [李沐对transformer的讲解](https://www.youtube.com/watch?v=nzqlFIcCSWQ&list=PLFXJ6jwg0qW-7UM8iUTj3qKqdhbQULP5I&index=43)
 

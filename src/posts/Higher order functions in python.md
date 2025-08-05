@@ -1,8 +1,10 @@
 ---
-title: Higher order functions in python
-description: Notes for CS61A Lecture 4
-pubDate: Jul 20 2025
-heroImage: ../../assets/images/blog-placeholder-3.jpg
+title: "Higher order functions in python"
+description: "Notes for CS61A Lecture 4"
+pubDate: 2025-07-20
+updatedDate: 2025-07-20
+category: "Programming"
+tags: ["Python", "CS61A", "functions"]
 ---
 
 >[TIP] Significance

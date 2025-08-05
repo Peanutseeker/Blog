@@ -1,4 +1,13 @@
 
+---
+title: "AlphaFold3"
+description: "An explanation of AlphaFold3"
+pubDate: 2025-07-11
+updatedDate: 2025-07-11
+category: "AI Research"
+tags: ["AlphaFold", "llms", "paper-reading"]
+---
+
 承接上文，讲解 AlphaFold3
 
 
@@ -12,7 +21,7 @@
 
 ## Pipeline
 
-![](../../assets/images/Pasted%20image%2020250727042110.png)
+![](../assets/images/Pasted%20image%2020250727042110.png)
 
 
 #### 输入
@@ -43,7 +52,7 @@
 
 ##### 3 PairFormer
 这个模块取到了 AlphaFold2 的 EvoFormer，只输入 Pair 和 Single 表征
-![](../../assets/images/Pasted%20image%2020250728022111.png)
+![](../assets/images/Pasted%20image%2020250728022111.png)
 和 AlphaFold 2 相反， 这里先对 Pair 做三角更新， 模块和 AlphaFold 2 一致
 
  **“带Pair偏置的单体注意力 (Single attention with pair bias)”** 的机制传递到Single表征的 。
@@ -70,7 +79,7 @@
 
 模型学习的是逆向过程：在 `Pair` 与 `Single` 的 表征下， 迭代式去噪
 
-![](../../assets/images/Pasted%20image%2020250729075850.png)
+![](../assets/images/Pasted%20image%2020250729075850.png)
 这是模型的单步去噪的网络
 
 输入: 带噪声的原子坐标， `Pair` + `Single`
@@ -214,7 +223,7 @@ $$
 ### Mini Rollout 方法的进一步解释
 
 Mini Rollout是一种专门为了解决**置信度模块训练**难题而设计的巧妙策略。
-![](../../assets/images/Pasted%20image%2020250729084834.png)
+![](../assets/images/Pasted%20image%2020250729084834.png)
 
 #### A. 问题的根源
 
